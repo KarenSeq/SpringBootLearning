@@ -20,6 +20,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LearnSpringBootApplication {
 
 	public static void main(String[] args) {
+		System.out.println("In main method");
 		SpringApplication.run(LearnSpringBootApplication.class, args);
 	}
 
