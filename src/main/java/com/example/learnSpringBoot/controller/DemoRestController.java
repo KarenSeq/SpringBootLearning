@@ -1,13 +1,13 @@
 package com.example.learnSpringBoot.controller;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.learnSpringBoot.exception.AnotherCustomException;
+import com.example.learnSpringBoot.exception.SomeCustomException;
 import com.example.learnSpringBoot.model.Person;
 
 /**
@@ -36,6 +36,16 @@ public class DemoRestController {
 	@RequestMapping(value = "/update1/{id}", method = RequestMethod.PUT)
 	public String updatePerson1(@PathVariable("id") String id, @RequestBody Person person) {
 		return "The name of person with id "+id+" is updated to "+person.getFirstName()+" "+person.getLastName();
+	}
+	
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+	public String deletePerson(@PathVariable("id") String id, @RequestBody Person person) {
+		throw new SomeCustomException("Karen", "Bad Request");
+	}
+	
+	@RequestMapping(value = "/delete1/{id}", method = RequestMethod.DELETE)
+	public String deletePerson1(@PathVariable("id") String id, @RequestBody Person person) {
+		throw new AnotherCustomException("User is not allowed to delete a person");
 	}
 
 }
