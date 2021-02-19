@@ -1,5 +1,7 @@
 package com.example.learnSpringBoot.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,13 +20,17 @@ import com.example.learnSpringBoot.model.Person;
 @RestController
 public class DemoRestController {
 	
+	private static final Logger logger = LoggerFactory.getLogger(DemoRestController.class);
+	
 	@RequestMapping(value = "/name")
 	public String displayName() {
+		logger.info("In display name method");
 		return "Karen";
 	}
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String addPerson(@RequestBody Person person) {
+		logger.info("In add person method");
 		return "The name of the person is "+person.getFirstName()+" "+person.getLastName();
 	}
 	
