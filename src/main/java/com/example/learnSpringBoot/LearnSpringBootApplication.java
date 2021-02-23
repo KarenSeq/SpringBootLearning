@@ -2,6 +2,8 @@ package com.example.learnSpringBoot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @author Karen
@@ -22,6 +24,11 @@ public class LearnSpringBootApplication {
 	public static void main(String[] args) {
 		System.out.println("In main method");
 		SpringApplication.run(LearnSpringBootApplication.class, args);
+	}
+	
+	@Bean
+	public RestTemplate getRestTemplate() {
+		return new RestTemplate();
 	}
 
 }
