@@ -39,6 +39,7 @@ public class DemoRestController {
 		return "Karen";
 	}
 	
+	
 	/**
 	 * Fetches inventories using rest template from another application
 	 * @return JSON response as a String

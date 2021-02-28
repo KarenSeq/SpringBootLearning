@@ -7,5 +7,9 @@ import lombok.Getter;
 @Getter
 public class AnotherCustomException extends RuntimeException{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String message;
 }

@@ -8,3 +8,6 @@
 
 #Commit 5 [19-02-21]
 - Interceptor implemented. As the name suggests intercepts the request/response.
+
+#Commit 6 [28-02-21]
+- Thymeleaf starter

@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
  *  In short, this annotation is used for defining beans using the Java configuration.
  * + @EnableAutoConfiguration( automatically configures your application based on the dependencies 
  * you have added to the project) 
- * + @ComponentScan(scan for beans)
+ * + @ComponentScan(scan for beans) 
  *
  */
 @SpringBootApplication
